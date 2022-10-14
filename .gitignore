@@ -1,0 +1,4 @@
+elastic
+test_nevi
+*venv*
+*.tox*

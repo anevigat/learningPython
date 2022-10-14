@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+Nevi_example.egg-info/PKG-INFO
+Nevi_example.egg-info/SOURCES.txt
+Nevi_example.egg-info/dependency_links.txt
+Nevi_example.egg-info/requires.txt
+Nevi_example.egg-info/top_level.txt

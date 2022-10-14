@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: Nevi-example
+Version: 0.1.0
+Summary: Foo
+Author: Israel Santana <isantana@redhat.com>
+License: GPLv2+
+Provides-Extra: dev
