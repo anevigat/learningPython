@@ -43,6 +43,9 @@ spec:
       containers:
       - name: service-a-v1
         image: anevigat/python-rest:latest
+        imagePullPolicy: Always
+        command: ["python3"]
+        args: ["-m" , "flask",  "--app", "main", "run", "--host=0.0.0.0"]
         ports:
           - containerPort: 5000
         securityContext:
