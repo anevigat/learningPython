@@ -23,29 +23,27 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-b-v1
+  name: service-b-v2
   labels:
     app: service-b
-    version: v1
+    version: v2
 spec:
   selector:
     matchLabels:
       app: service-b
-      version: v1
+      version: v2
   replicas: 1
   template:
     metadata:
       labels:
         app: service-b
-        version: v1
+        version: v2
     spec:
       serviceAccountName: service-b
       containers:
-      - name: service-b-v1
+      - name: service-b-v2
         image: anevigat/python-rest:latest
         imagePullPolicy: Always
-        command: ["python3"]
-        args: ["-m" , "flask",  "--app", "main", "run", "--host=0.0.0.0"]
         ports:
           - containerPort: 5000
         securityContext:
@@ -59,11 +57,11 @@ spec:
             memory: 32Mi
         env:
           - name: APP_NAME
-            value: "service-b"
+            value: "service-b-v2"
           - name: VERSION
-            value: "v1"
+            value: "v2"
           - name: CONNECT_URL
-            value: "http://service-a:5000/"
+            value: "https://www.google.es"
           - name: NODE
             valueFrom:
               fieldRef:
