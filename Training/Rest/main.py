@@ -24,7 +24,7 @@ connect_url = os.getenv('CONNECT_URL')
 @app.route("/connect")
 def connect():
     response = {}
-    response['action'] = f"Connecting to {connect_url}"
+    response['action'] = f"Connecting from {os.getenv('APP_NAME')} to {connect_url}"
     try:
         r = requests.get(url = connect_url)
         response['response'] = str(r.content)
