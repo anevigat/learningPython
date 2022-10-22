@@ -3,3 +3,5 @@ test_nevi
 *venv*
 *.tox*
 *pycache*
+*egg-info
+*coverage
