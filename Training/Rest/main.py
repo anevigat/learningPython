@@ -15,6 +15,7 @@ def get_env():
     info['namespace'] = os.getenv('NAMESPACE')
     info['pod'] = os.getenv('POD')
     info['node'] = os.getenv('NODE')
+    info['connect_url'] = os.getenv('CONNECT_URL')
     return info
 
 def configure_routes(app, info):
@@ -25,22 +26,14 @@ def configure_routes(app, info):
 
     @app.route("/info")
     def get_info():
-        info = {}
-        info['app_name'] = os.getenv('APP_NAME')
-        info['version'] = os.getenv('VERSION')
-        info['namespace'] = os.getenv('NAMESPACE')
-        info['pod'] = os.getenv('POD')
-        info['node'] = os.getenv('NODE')
         return json.dumps(info)
-
-    connect_url = os.getenv('CONNECT_URL')
 
     @app.route("/connect")
     def connect():
         response = {}
-        response['action'] = f"Connecting from {info['app_name']} to {connect_url}"
+        response['action'] = f"Connecting from {info['app_name']} to {info['connect_url']}"
         try:
-            r = requests.get(url = connect_url)
+            r = requests.get(url = info['connect_url'])
             response['response'] = str(r.content)
             response['code'] = r.status_code
         except requests.exceptions.ConnectionError as e:
