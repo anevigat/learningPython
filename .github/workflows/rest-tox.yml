@@ -28,4 +28,6 @@ jobs:
 
       - name: Run tox
         working-directory: ${{ env.WORKDIR }}
-        run: tox
+        run: |
+          echo "# Running Tox..." :rocket: >> $GITHUB_STEP_SUMMARY 2>&1
+          tox >> $GITHUB_STEP_SUMMARY 2>&1
