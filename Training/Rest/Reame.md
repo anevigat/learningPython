@@ -1,6 +1,8 @@
 # REST API training
 
-*** A Docker image will be pushed automatically to Docker Hub when pushing changes to main ***
+*** Tox will be run when creating a PR to main.***
+*** A Docker image vulnerability scan will be run when creating a PR to main.***
+*** A Docker image will be pushed automatically to Docker Hub when pushing changes to main.***
 
 ### Example from:
 https://auth0.com/blog/developing-restful-apis-with-python-and-flask/
