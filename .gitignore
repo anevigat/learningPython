@@ -1,7 +1,7 @@
 elastic
 test_nevi
 *venv*
-*tox*
+*.tox*
 *pycache*
 *egg-info
 *coverage
