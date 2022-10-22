@@ -1,14 +1,14 @@
-"""
-Simple REST API to test service mesh functionality.
-"""
-from flask import Flask
-import os
+"""Simple REST API to test service mesh functionality."""
 import json
+import os
+
 import requests
+from flask import Flask
 
 app = Flask(__name__)
 
 def get_env():
+    """Construct dictionary with Environmental Variables."""
     info = {}
     info['app_name'] = os.getenv('APP_NAME')
     info['version'] = os.getenv('VERSION')
@@ -18,6 +18,7 @@ def get_env():
     return info
 
 def configure_routes(app, info):
+    """Create router."""
     @app.route("/")
     def hello_world():
         return f"Hello from {info['app_name']}"
